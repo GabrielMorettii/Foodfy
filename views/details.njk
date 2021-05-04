@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{script.title}}</title>
+        <link href="/style.css" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="conteiner">
+            <div class="header">
+                <header>
+                    <nav>
+                        <ul>
+                            <li id="logo"><a href="/"><img src="/Images/logo.png" alt="Logo"></a></li>
+                            <li id="about"><a href="/about">Sobre</a></li>
+                            <li id="recipe"><a href="/recipe">Receitas</a></li>
+                        </ul>
+                    </nav>
+                </header>
+            </div>
+            <br><br>
+            <div class="main-image">
+                <img src="{{script.image}}" alt="{{script.title}}">
+            </div> 
+            <div class="name_recipe">
+                <h1>{{script.title}}</h1>
+            </div>
+            <div class="author_recipe">
+                <p>por {{script.author}}</p>
+            </div>
+            <div class="ingredients">
+                <br>
+                <div class="contentdetail">
+                <h3>Ingredientes</h3>
+                <p class="buttom">MOSTRAR</p>
+                <br>
+                
+                <ul class="selector active">
+                {% for ingredient in script.ingredients %}
+                <li>{{ingredient}}</li>
+                {% endfor %}
+                </ul>
+                </div>
+            </div>
+                <br><br>     
+            <div class="method">
+                <div class="contentdetail">
+                <h3>Modo de Preparo</h3>
+                <p class="buttom">MOSTRAR</p>
+                <br>
+                <ul class="selector active">
+                {% for prepare in script.preparation %}
+                <li>{{prepare}}</li>
+                {% endfor %}
+                </ul>
+                </div>
+                <br>
+            </div>
+            <div class="aside">
+                <div class="contentdetail">
+                <h3>Informações Adicionais</h3>
+                <p class="buttom">MOSTRAR</p>
+                <br>
+                <p class="selector active">{{script.information}}</p>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <p>Todos direitos reservados, receitas Foodfy</p>
+        </footer>
+        <script src="/script.js"></script>
+    </body>
+</html>

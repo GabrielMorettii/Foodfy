@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Foodfy</title>
+        <link rel="stylesheet" href="/style.css" type="text/css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="conteiner">
+            <div class="header">
+                <header>
+                    <nav>
+                        <ul>
+                            <li id="logo"><a href="/"><img src="/Images/logo.png" alt="Logo"></a></li>
+                            <li id="about"><a href="/about">Sobre</a></li>
+                            <li id="recipe"><a href="/recipe">Receitas</a></li>
+                        </ul>
+                    </nav>
+                </header>
+            </div>
+            <div class="section_title">
+                <div class="text">
+                    <h1>As melhores receitas</h1>
+                    <p>Aprenda a construir os melhores pratos com receitas criadas por profissionais do mundo inteiro.</p>
+                </div>
+                <div class="image_chef">
+                    <img src="/Images/chef.png" alt="Chefe de cozinha">
+                </div>
+            </div>
+            <div class="recipes">
+                <div class="title">
+                    <p>Mais acessadas</p>
+                </div>
+                <div class="cards">
+                    {% for item in items %}
+                    <div class="card" id={{item.index}}>
+                        <div class="image_recipe">
+                            <img src="{{item.image}}" alt="{{item.title}}">
+                        </div>
+                        <div class="name_recipe">
+                            <p>{{item.title}}</p>
+                        </div>
+                        <div class="author_recipe">
+                            <p>por {{item.author}}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <footer>
+            <p>Todos direitos reservados, receitas Foodfy</p>
+        </footer>
+        <script src="/script.js"></script>
+    </body>
+</html>
